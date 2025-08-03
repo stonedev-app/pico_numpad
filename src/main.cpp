@@ -8,7 +8,7 @@ constexpr int BTN = 15;
 void Task1(void *pvParameters) {
     pinMode(BTN, INPUT_PULLUP);
     int value = 0;
-    while (1) {
+    while (true) {
         value = digitalRead(BTN);
         printf("%d\n", value);
 
