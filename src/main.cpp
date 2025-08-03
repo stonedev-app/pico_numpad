@@ -13,7 +13,7 @@ void Task1(void *pvParameters) {
         printf("%d\n", value);
 
         // 自分のスタック使用量を確認
-        // UBaseType_t stackLeft = uxTaskGetStackHighWaterMark(NULL);
+        // UBaseType_t stackLeft = uxTaskGetStackHighWaterMark(nullptr);
         // printf("Stack Left(Task1) : %uword\n", stackLeft);
 
         vTaskDelay(1000 / portTICK_PERIOD_MS);
@@ -22,7 +22,7 @@ void Task1(void *pvParameters) {
 
 void setup() {
     DEBUG_RP2040_PORT.begin(115200);
-    xTaskCreate(Task1, "Task1", 512, NULL, 1, NULL);
+    xTaskCreate(Task1, "Task1", 512, nullptr, 1, nullptr);
 }
 
 void loop() {
