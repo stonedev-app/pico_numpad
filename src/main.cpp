@@ -3,7 +3,7 @@
 #include <task.h>
 
 // GPIO15
-const int BTN = 15;
+constexpr int BTN = 15;
 
 void Task1(void *pvParameters) {
     pinMode(BTN, INPUT_PULLUP);
