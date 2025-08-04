@@ -5,7 +5,7 @@
 // GPIO15
 constexpr int BTN = 15;
 
-void Task1(void *pvParameters) {
+__attribute__((noreturn)) void Task1(void *pvParameters) {
     pinMode(BTN, INPUT_PULLUP);
     int value = 0;
     while (true) {
@@ -30,7 +30,7 @@ void loop() {
 }
 
 // スタックオーバーフロー検知
-void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
+__attribute__((noreturn)) void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
     // ここにエラー処理やデバッグ用の処理を書く
     // 例：シリアル出力や無限ループで停止
     printf("Stack overflow detected in task %s\n", pcTaskName);
